@@ -4,14 +4,13 @@
 
 Postgre도 SELECT로 가져오는 값을 오름차순 내지는 내림차순으로 정렬해서 가져올 수 있다.
 
-다음 절을 봐보자
+다음 syntax을 봐보자
 
 ![Alt text](image.png)
 
-해당 구문에서 ORDER BY 키워드 뒤에 오는 쉼표나 땀표로 해당 구문을 구분할 수 있따. 여러 개의 열을 정렬하고 싶다면 뒤에 쉼표(,)를 둠으로써 해당 쉼표 뒤에 다른 열이 올 수 있게 할 수 있고, 해당 절 뒤에 땀표(;)를 둠으로써 마지막 정렬할 열임을 표시할 수 도 잇
-다.
+해당 구문에서 ORDER BY 키워드 뒤에 오는 쉼표나 땀표로 해당 구문을 구분할 수 있다. 여러 개의 열을 정렬하고 싶다면 뒤에 쉼표(,)를 둠으로써 해당 쉼표 뒤에 다른 열이 올 수 있게 할 수 있고, 해당 syntax 뒤에 땀표(;)를 둠으로써 마지막 정렬할 열임을 표시할 수 도 있다.
 
-postgreSQL은 SELECT 절을 다음 순서대로 평가하게 된다.
+postgreSQL은 SELECT syntax을 다음 순서대로 평가하게 된다.
 
 > FROM-> SELECT -> ORDER BY
 ![Alt text](image-1.png)
@@ -19,17 +18,16 @@ postgreSQL은 SELECT 절을 다음 순서대로 평가하게 된다.
 이 순서 때문에 SELECT 문에 별칭을 붙이는 파트가 있다면. ORDER BY 문에서 사용해야 한다.
 다음 예제를 보면 알 수 있을 것이가.
 
-> customre 테이블을 사용해서 정렬하는 예제
+> customer 테이블을 사용해서 정렬하는 예제
 
 * Customer 테이블
 
 ![Alt text](image-2.png)
 
-다음 customer 테입블에서 성과 이름을 오름차순으로 정렬해보자.
-
-SELECT
-    </br>&nbsp;&nbsp;&nbsp;First_name,
-    </br>&nbsp;&nbsp;&nbsp;last_name</br>
+다음 customer 테입블에서 성과 이름을 오름차순으로 정렬해보면.
+> SELECT
+    <br>&nbsp;&nbsp;&nbsp;First_name,
+    <br>&nbsp;&nbsp;&nbsp;last_name</br>
 FROM
     </br>&nbsp;&nbsp;&nbsp;customer</br>
 ORDER BY

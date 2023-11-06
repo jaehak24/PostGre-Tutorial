@@ -1,31 +1,31 @@
 # 가장 많이 쓰는 명령-SELECT
 
-PostGRe SELECT는 가장 복합적으로 쓸 수 있는 명령문이다. 유연하게 사용하기 위해서 많은 절을 갖고 있다.
+PostGRe SELECT는 가장 복합적으로 쓸 수 있는 명령문이다. 유연하게 사용하기 위해서 많은 syntax를 갖고 있다.
 
-## 절 종류
-* DISTINCT
+## syntax 종류
+## DISTINCT
 > 구별이 되는 행을 구하기 위해서 DISTINCT를 사용한다.
 
-* ORDER BY
+## ORDER BY
 >  행을 정렬하기 위해서 ORDER BY를 사용한다. 
 
-* WHERE
+## WHERE
 > 행을 조건에 따라 식별하기 위해서 where를 사용한다.
 
-* FETCH, LIMIT
+## FETCH, LIMIT
 > FETCH와 LIMIT으로 제약조건을 걸어 일부만 가져올 수 있다.
 
-* GROUP BY
-> 행을 그룹 짓기 위해서 GROUP BY 절을 사용한다.
+## GROUP BY
+> 행을 그룹 짓기 위해서 GROUP BY syntax를 사용한다.
 
-* HAVING
-> 그룹을 필터하기 위해서 HAVING 절을 사용한다.
+## HAVING
+> 그룹을 필터하기 위해서 HAVING syntax를 사용한다.
 
-* INNER JOIN, LEFT JOIN, FULL OUTER JOIN, CROSS JOIN
-> 절을 사용해서 그룹들을 조인시킨다.
+## INNER JOIN, LEFT JOIN, FULL OUTER JOIN, CROSS JOIN
+> syntax를 사용해서 그룹들을 조인시킨다.
 
-* UNION, INTERSECT, EXCEPT
-> 세트 단위로 작업을 수행하기 위해서는 UNION, INTERSECT, EXCEPT 절을 사용한다.
+## UNION, INTERSECT, EXCEPT
+> 세트 단위로 작업을 수행하기 위해서는 UNION, INTERSECT, EXCEPT syntax를 사용한다.
 
 
 해당 튜토리얼에서는 SELECT와 FROM을 중점적으로 사용할 예정이다.
@@ -40,7 +40,7 @@ PostGRe SELECT는 가장 복합적으로 쓸 수 있는 명령문이다. 유연�
 
 2. FROM 키워드를 사용해서 SELECT를 사용할 테이블을 지정한다.
 
-### postGRE는 SELECT절에서 FROM을 SELECT보다 먼저 평가한다.
+### postGRE는 SELECT syntax에서 FROM을 SELECT보다 먼저 평가한다.
 
 
 ## 예제
@@ -50,9 +50,9 @@ PostGRe SELECT는 가장 복합적으로 쓸 수 있는 명령문이다. 유연�
 
 > SELECT first_name FROM customer;
 
-라는 절을 콘솔에 입력해 추출해 낼 수 있다.
+라는 syntax를 콘솔에 입력해 추출해 낼 수 있다.
 
-또, 이름 뿐만 아니라 성, 이메일까지 같이 추출하고 싶다면 다음과 같이 절을 작성하면된다.
+또, 이름 뿐만 아니라 성, 이메일까지 같이 추출하고 싶다면 다음과 같이 syntax를 작성하면된다.
 
 > SELECT 
 >   first_name,
@@ -70,7 +70,7 @@ PostGRe SELECT는 가장 복합적으로 쓸 수 있는 명령문이다. 유연�
  1. 많은 데이터를 다루는 Postgre에서 *를 선택해 작업을 진행할 경우 모든 열을 하나하나 가져오는 작업을 진행해야 하므로 퍼포먼스 측면으로 봤을 때, 해당 작업은 비효율적인 작업일 수 밖에 없다.
  2. 불필요한 데이터까지 가져온다면 application 서버와 database 서버 사이의 트래픽이 증가하며, 당신의 앱은 응답 속도가 늦어질 것이며, 확장성은 낮다고 판단할 수 밖에 없다.
 
- 그러므로 SELSECT 다음의 오는 조건에 대해서는 여러 절을 사용해서 한정 짓는 것이 좋다.
+ 그러므로 SELSECT 다음의 오는 조건에 대해서는 여러 syntax를 사용해서 한정 짓는 것이 좋다.
 
  ### 고객의 FULL name을 가져와봅시다.
 
