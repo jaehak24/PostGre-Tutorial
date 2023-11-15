@@ -110,3 +110,5 @@ syntax를 사용하여 자신이 속한 집합을 NULL로 지정하여, 교집�
 ![Alt text](image-12.png)
 
 결과를 보면, fruit_a 테이블을 기준으로 outer Join을 했기 때문에, 결과를 보면, a 테이블은 기존의 순석대로 정렬되고 뒤의 행이 null로 추가되면서 fruit_b에 매치 되지 않는 열 값들에 대응되지 않는 값들이 null로 채워진다. outer join으로 들어오는 fruit_b의 테이블은 또 다른 개념이다. a 테이블에 일치되는 'banana'는 상단에 떨어져서 나오고 나머지 대응되지 않는 값들은 우측 하단에 배치되어 있는 것을 확인할 수 있다.
+
+### Full outer join
